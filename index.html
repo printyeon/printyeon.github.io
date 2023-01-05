@@ -178,9 +178,9 @@
 	<header>
 		<div class="headmenu_wrap">
 			<ul class="headmenu">
-				<li><a href="#">about</li>
+				<li><a href="#toabout">about</li>
 				<li><a href="#">main</li>
-				<li><a href="#">portfolio</li>
+				<li><a href="#toproject">project</li>
 			</ul>
 		</div>
 	</header>
@@ -207,7 +207,8 @@
 
 	
 <div class="about">
-	<div class="about_bg" id="about_bg1">
+	<div class="about_bg">
+		<a name="toabout">
 		<img src="./img/about_bg.png" width="100%" height="100%">
 	</div>
 
@@ -231,7 +232,8 @@
 
 <div class="project">
 	
-	<div class="project_picbg" id="project_picbg1">
+	<div class="project_picbg">
+		<a name="toproject">
 		<img src="./img/project_picbg.png" width="100%">
 	</div>
 
@@ -244,6 +246,18 @@
 	</div>
 </div>
 
+
+<script type="text/javascript">
+	
+	document.querySelector('.headmenu').addEventListener('click',e=>{
+    if(e.target.nodeName === 'LI'){
+      let id_value = e.target.dataset.link;
+      document.querySelector(id_value).scrollIntoView({behavior : 'smooth'});
+    }
+  });
+</script>
 </body>
 </html>
+
+
 
